@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenBilling</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="splash" class="splash">
+<img src="assets/logo.png" class="app-logo"><div class="splash-logo">OpenBilling</div>
+<div class="splash-sub">
+Fast Universal Billing App
+</div>
+
+<button class="start-btn" onclick="app.startApp()">
+Get Started
+</button>
+</div>
+
+<div id="app"></div>
+<script src="js/state.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/app.js"></script>
+<script>
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+<script>
+
+window.addEventListener('beforeunload', function (e) {
+
+e.preventDefault();
+
+e.returnValue =
+'OpenBilling stores data locally. Clearing browser data may remove invoices, products, and settings unless backed up.';
+
+});
+
+</script>
+
+</body>
+
+</html>

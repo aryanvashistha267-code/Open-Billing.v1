@@ -1,0 +1,371 @@
+
+:root{
+--bg:#f3f4f6;
+--card:#fff;
+--text:#111827;
+--primary:#1e40af;
+--border:#d1d5db;
+--danger:#dc2626;
+}
+body.dark{
+--bg:#111827;
+--card:#1f2937;
+--text:#f9fafb;
+--border:#374151;
+}
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:var(--bg);color:var(--text)}
+.header{background:var(--primary);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.container{padding:14px;max-width:1200px;margin:auto}
+.card{background:var(--card);padding:16px;border-radius:16px;border:1px solid var(--border);margin-bottom:14px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+button{border:none;padding:12px 16px;border-radius:12px;font-weight:bold;cursor:pointer}
+.primary{background:var(--primary);color:#fff}
+.secondary{background:#d1d5db}
+.danger{background:var(--danger);color:#fff}
+input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text)}
+.product{display:flex;justify-content:space-between;align-items:center;padding:14px;border:1px solid var(--border);border-radius:14px;margin-bottom:10px}
+.low{color:#dc2626;font-weight:bold}
+.float-history{position:fixed;bottom:18px;right:18px;width:58px;height:58px;border-radius:999px;background:#1e40af;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px}
+@media(max-width:768px){
+button{padding:14px}
+}
+
+
+.billing-layout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:18px;
+align-items:start;
+}
+
+.products-panel,
+.summary-panel{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+padding:18px;
+}
+
+.summary-panel{
+position:sticky;
+top:16px;
+}
+
+.profile-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+@media(max-width:900px){
+
+.billing-layout{
+grid-template-columns:1fr;
+}
+
+.summary-panel{
+position:sticky;
+bottom:0;
+}
+
+.profile-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+
+body{
+min-height:100vh;
+}
+
+.app-shell{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+.header{
+height:72px;
+padding:0 24px;
+font-size:22px;
+box-shadow:0 2px 10px rgba(0,0,0,0.15);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.container{
+max-width:1600px;
+width:100%;
+padding:24px;
+}
+
+.card,
+.products-panel,
+.summary-panel{
+box-shadow:0 8px 24px rgba(0,0,0,0.12);
+}
+
+.products-panel{
+min-height:80vh;
+}
+
+.summary-panel{
+min-height:420px;
+}
+
+.product{
+padding:18px;
+font-size:16px;
+}
+
+button{
+font-size:15px;
+padding:14px 18px;
+}
+
+input,textarea{
+font-size:15px;
+padding:14px;
+}
+
+h1,h2,h3{
+margin-top:0;
+}
+
+.splash{
+position:fixed;
+inset:0;
+background:#111827;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+flex-direction:column;
+color:white;
+}
+
+.splash-logo{
+font-size:48px;
+font-weight:800;
+margin-bottom:18px;
+}
+
+.splash-sub{
+opacity:0.8;
+margin-bottom:28px;
+}
+
+.start-btn{
+background:#2563eb;
+color:white;
+border:none;
+padding:16px 28px;
+font-size:18px;
+border-radius:16px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.header{
+font-size:18px;
+height:64px;
+}
+
+.container{
+padding:14px;
+}
+
+.products-panel{
+min-height:auto;
+}
+
+.summary-panel{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+border-radius:18px 18px 0 0;
+z-index:200;
+}
+
+body{
+padding-bottom:420px;
+}
+
+}
+
+
+/* MOBILE POLISH */
+
+@media(max-width:900px){
+
+.container{
+padding:10px !important;
+}
+
+.header{
+height:64px !important;
+padding:0 14px !important;
+font-size:18px !important;
+}
+
+.card,
+.products-panel,
+.summary-panel{
+border-radius:16px !important;
+padding:14px !important;
+}
+
+button{
+min-height:48px;
+font-size:15px !important;
+}
+
+input,
+textarea{
+min-height:48px;
+font-size:16px !important;
+}
+
+.product{
+padding:14px !important;
+border-radius:14px !important;
+}
+
+.billing-layout{
+display:flex !important;
+flex-direction:column !important;
+gap:14px !important;
+}
+
+.summary-panel{
+position:relative !important;
+top:auto !important;
+}
+
+.toolbar{
+gap:10px !important;
+flex-wrap:wrap !important;
+}
+
+.toolbar button{
+flex:1;
+min-width:120px;
+}
+
+.float-history{
+width:58px;
+height:58px;
+font-size:22px;
+bottom:16px;
+right:16px;
+}
+
+}
+
+
+
+/* THERMAL PRINT MODE */
+
+@media print{
+
+body{
+background:white !important;
+margin:0 !important;
+padding:0 !important;
+font-size:12px !important;
+}
+
+.header,
+.toolbar,
+.float-history,
+button,
+input,
+textarea{
+display:none !important;
+}
+
+.container,
+.card,
+.products-panel,
+.summary-panel{
+box-shadow:none !important;
+border:none !important;
+margin:0 !important;
+padding:0 !important;
+background:white !important;
+}
+
+.billing-layout{
+display:block !important;
+}
+
+.invoice-print{
+width:58mm !important;
+max-width:58mm !important;
+margin:auto !important;
+padding:4mm !important;
+font-size:12px !important;
+}
+
+.invoice-print table{
+width:100%;
+border-collapse:collapse;
+}
+
+.invoice-print td,
+.invoice-print th{
+padding:2px 0;
+font-size:11px;
+text-align:left;
+}
+
+.invoice-print h1,
+.invoice-print h2,
+.invoice-print h3{
+margin:4px 0;
+font-size:14px;
+text-align:center;
+}
+
+.invoice-print .total{
+font-size:16px;
+font-weight:bold;
+margin-top:8px;
+text-align:center;
+}
+
+@page{
+size:58mm auto;
+margin:0;
+}
+
+}
+
+
+
+.app-logo{
+width:120px;
+height:120px;
+object-fit:contain;
+margin-bottom:18px;
+border-radius:24px;
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.header-brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.header-brand img{
+width:42px;
+height:42px;
+border-radius:12px;
+}
+
